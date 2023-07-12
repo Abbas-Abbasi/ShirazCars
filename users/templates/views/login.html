@@ -1,0 +1,107 @@
+{% extends 'base/base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+    <link href="{% static 'css/loginstyle.css' %}" rel="stylesheet">
+
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #c4c3ca;
+            background-color: #1f2029;
+            overflow-x: hidden;
+        }
+
+        /* Rest of the CSS code */
+
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            height: 24px;
+            font-size: 16px;
+            line-height: 24px;
+            color: #ffeba7;
+            transition: all 200ms linear;
+        }
+
+        .form-style {
+            padding: 13px 20px;
+            padding-left: 35px;
+            height: 48px;
+            width: 100%;
+            font-weight: 500;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 0.5px;
+            outline: none;
+            color: #c4c3ca;
+            background-color: #1f2029;
+            border: none;
+            transition: all 200ms linear;
+            box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
+        }
+
+        .input-wrapper:focus-within .form-style {
+            box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
+        }
+
+        .input-wrapper:focus-within .input-icon {
+            color: #ff006d;
+        }
+
+
+    </style>
+
+
+
+    <div class="text-center">
+        <main class="form-signin">
+            <form action="" method="post">
+                <img class="mb-4" src="{% static 'images/logo.png' %}" alt="" width="72" height="72">
+                {% csrf_token %}
+
+                <div class="form-group input-wrapper">
+                    <i class="input-icon uil uil-user"></i>
+                    <input type="text" id="id_username" name="username" class="form-style" required autofocus
+                           placeholder="Username">
+                </div>
+
+                <div class="form-group input-wrapper">
+                    <i class="input-icon uil uil-lock-alt"></i>
+                    <input type="password" id="id_password" name="password" class="form-style" required
+                           placeholder="Password">
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="id_remember_me" name="remember_me">
+                    <label class="form-check-label" for="id_remember_me">Remember me</label>
+                    <button class="w-100 btn btn-lg btn-danger btn-3d" type="submit">Sign In</button>
+
+                    <label class="mt-2 text-muted">If you don't have an account <a
+                            href="{% url 'register' %}">Register now</a></label>
+{#                    <label class="mt-1 text-muted">Forgot Parssword?  <a#}
+{#                            href="{% url 'password_reset' %}">Reset Password</a></label>#}
+                </div>
+                <p class="mt-5 mb-3 text-muted">Copyright &copy; {% now 'Y' %} <a href="">Shiraz Cars</a></p>
+            </form>
+        </main>
+    </div>
+
+
+{% endblock %}
+{% block footer %}
+{% endblock %}
