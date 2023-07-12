@@ -5,67 +5,7 @@
 
 {% block body %}
 
-
-    <style>
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 300;
-            font-size: 15px;
-            line-height: 1.7;
-            color: #c4c3ca;
-            background-color: #1f2029;
-            overflow-x: hidden;
-        }
-
-        /* Rest of the CSS code */
-
-
-        .input-wrapper {
-            position: relative;
-        }
-
-        .input-icon {
-            position: absolute;
-            top: 50%;
-            left: 10px;
-            transform: translateY(-50%);
-            height: 24px;
-            font-size: 16px;
-            line-height: 24px;
-            color: #ffeba7;
-            transition: all 200ms linear;
-        }
-
-        .form-style {
-            padding: 13px 20px;
-            padding-left: 35px;
-            height: 48px;
-            width: 100%;
-            font-weight: 500;
-            border-radius: 4px;
-            font-size: 14px;
-            line-height: 22px;
-            letter-spacing: 0.5px;
-            outline: none;
-            color: #c4c3ca;
-            background-color: #1f2029;
-            border: none;
-            transition: all 200ms linear;
-            box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
-        }
-
-        .input-wrapper:focus-within .form-style {
-            box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
-        }
-
-        .input-wrapper:focus-within .input-icon {
-            color: #ff006d;
-        }
-
-
-    </style>
-
+    <link href="{% static 'css/loginstyle.css' %}" rel="stylesheet">
 
     <div class="text-center">
         <main class="form-signin">
